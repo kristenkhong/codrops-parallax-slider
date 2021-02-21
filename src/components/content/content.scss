@@ -44,16 +44,9 @@
     line-height: var(--lh-heading-sm);
 
     @media (min-width: 768px) {
-      grid-column: 5 / 16;
+      grid-column: 5 / 12;
 
-      margin: -10; 
+      margin: 0;
     }
-  }
-}
-
-ul li a {
-  text-decoration:none;
-  &:hover {
-    color: red;
   }
 }
