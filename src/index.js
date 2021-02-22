@@ -6,6 +6,7 @@ import Scroll from './utils/scroll';
 import { constants, instances } from './store';
 
 import './index.scss'
+//import './css/base.css'
 
 constants.isDevice = 'ontouchstart' in window;
 constants.isDevice && document.body.classList.add('is-device');
