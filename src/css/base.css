@@ -5,21 +5,34 @@
 }
 
 :root {
-	font-size: 16px;
+	font-size: 18px;
 }
+
+
+/* From styles/font.scss */
+@font-face { 
+  font-family: 'Saol Display';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url('../assets/fonts/SaolDisplay-Regular.woff2') format('woff2'),
+    url('../assets/fonts/SaolDisplay-Regular.woff') format('woff');
+}
+
+
+
 
 body {
 	margin: 0;
-	--color-text: #1c1b1b;
-	--color-bg: #efe6e1;
-	--color-link: #b07656;
+	--color-text: #3e3f3f;
+	--color-bg: #f7f5f4;
+	--color-link: red;
 	--color-link-hover: #000;
-	--color-deco: #e4dbd6;
+	--color-deco: white;
 	color: var(--color-text);
 	background-color: var(--color-bg);
-	font-family: paralucent, sans-serif;
-	font-family: quiroh, sans-serif;
-	font-family: mr-eaves-xl-sans, sans-serif;
+	font-family: "neue-haas-grotesk-display";
 }
 
 /* Page Loader */
@@ -59,13 +72,12 @@ body {
 
 a {
 	text-decoration: none;
-	color: var(--color-link);
-	outline: none;
+	color: #3e3f3f;
 }
 
 a:hover,
 a:focus {
-	color: var(--color-link-hover);
+	color: red;
 	outline: none;
 }
 
@@ -75,14 +87,60 @@ a:focus {
 
 .frame {
 	padding: 2.5rem 3rem;
-	position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
 	z-index: 10;
 }
 
 .frame__title {
-	font-size: 1rem;
+	color: #3e3f3f;
 	margin: 0 0 2.5rem;
 }
+
+@media only screen and (max-width: 1023px) {
+	.frame {
+		position: absolute;
+		top: auto;
+		left: auto;
+		padding: 1rem 2rem;
+		display: flex;
+		justfiy-content: flex-start;
+		align-items: center;
+		width: 100%;
+		background: rgba(255,255,255,1);
+	}
+	.frame__title-wrap {
+		display: flex;
+		order: 2;
+		position: relative;
+		height: 100%;
+	}
+	.frame__title-wrap::before {
+		content: "";
+		display: block;
+		width: 1px;
+		height: 50%;
+		background: rgba(0,0,0,0.2);
+		position: absolute;
+		top: 25%;
+		left: 1rem;
+	}
+	.frame__title {
+		display: flex;
+		margin: 0;
+		padding: 0 0 0 2rem;
+		order: 1;
+	}
+	.frame__title {
+		margin: 0;
+	}
+
+}
+
+.frame__links .iconify {
+		margin: 0.2rem 0 -0.15rem;
+	}
 
 .frame__links {
 	display: flex;
@@ -92,7 +150,9 @@ a:focus {
 
 .frame a {
 	margin: 0.25rem 0;
-	text-transform: lowercase;
+	outline: none;
+	font-size: 20px;
+	letter-spacing: 1px;
 }
 
 .frame__github,
@@ -130,7 +190,8 @@ a:focus {
 	counter-increment: figure;
 	content: counter(figure, decimal-leading-zero);
 	position: absolute;
-	font-family: paralucent, sans-serif;
+	/*font-family: paralucent, sans-serif; */
+	font-family: 'Saol Display';
 	font-size: 10rem;
 	color: var(--color-deco);
 	bottom: calc(100% - 3rem);
@@ -149,6 +210,14 @@ a:focus {
 	max-width: calc(100% - 2rem);
 	will-change: transform;
 }
+
+.item .item__img-wrap {
+	width: 1000px;
+	--aspect-ratio: 120/76;
+	--image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/1.jpg);
+}
+
+/*
 
 .item:first-child .item__img-wrap {
 	--aspect-ratio: 8/10;
@@ -200,6 +269,8 @@ a:focus {
 	--image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/9.jpg);
 }
 
+*/
+
 .item__img {
 	--overflow: 40px;
 	height: calc(100% + (2 * var(--overflow)));
@@ -212,7 +283,17 @@ a:focus {
 	will-change: transform;
 }
 
-.item__img--t1 {
+.img01 {
+	--image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/1.jpg);
+	--overflow: 60px;
+}
+.img02 {
+	--image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/2.jpg);
+}
+
+
+
+/*.item__img--t1 {
 	--overflow: 60px;
 }
 
@@ -222,29 +303,25 @@ a:focus {
 
 .item__img--t3 {
 	--overflow: 120px;
-}
+}*/
 
 .item__caption {
 	padding: 2rem 1rem;
 }
 
 .item__caption-title {
-	font-family: paralucent, sans-serif;
-	font-weight: 400;
+	font-family: "neue-haas-grotesk-display";
+	font-weight: 100;
 	font-size: 3rem;
 	margin: 0;
 }
 
 .item__caption-copy {
-	margin: 0;
+	font-family: "neue-haas-grotesk-display";
+	margin: 5;
+	letter-spacing: 1px;
 }
 
 .item__caption-copy::before {
-	content: '__';
-	line-height: 1;
-	color: var(--color-link);
-	font-weight: 700;
-	font-size: 3rem;
-	margin: 0 0 1rem;
-	display: block;
+
 }
