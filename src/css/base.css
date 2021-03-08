@@ -284,6 +284,8 @@ a:focus {
 	will-change: transform;
 }
 
+	
+
 .imgSeek01 {
 	--image: url(../img/seek_1.png);
 	--overflow: 60px;
@@ -308,7 +310,23 @@ a:focus {
 	--overflow: 60px;
 }
 
+.imgNestum01 {
+	--image: url(../img/nestum_1.png);
+	--aspect-ratio: 6/8;
 
+}
+.imgNestum02 {
+	--image: url(../img/nestum_2.png);
+	--overflow: 60px;
+}
+.imgNestum03 {
+	--image: url(../img/nestum_3.png);
+	--overflow: 60px;
+}
+.imgNestum04 {
+	--image: url(../img/nestum_4.png);
+	--overflow: 60px;
+}
 
 
 /*.item__img--t1 {
